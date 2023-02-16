@@ -18,9 +18,10 @@ body {
     width: 100%;
     height: 12%;
     padding: 0 7rem;
-    background-color: #1d0505;
+    background-color: #0E0F23;
     position: fixed;
     top: 0;
+    z-index: 9;
 }
 
 .logo-div {
@@ -98,6 +99,107 @@ a {
     justify-content: center;
 }
 
+.checkbtn {
+    font-size: 30px;
+    color: #ffffff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* Media Querie - Navbar */
+
+@media screen and (max-width: 1167px) {
+
+    .navbar {
+        padding: 0 3rem;
+    }
+
+    .logo-div {
+        font-size: 1.4rem;
+    }
+
+    .navbar .logo-div img {
+        width: 4.5rem;
+    }
+
+    .menu-div {
+        gap: 0rem;
+    }
+
+    .social-div {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .social-div {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        padding: 0 3rem;
+    }
+
+    .menu-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 12%;
+        left: 0;
+        width: 100%;
+        height: 88%;
+        background-color: #0E0F23;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+        z-index: 1;
+    }
+
+    .menu-div.show {
+        transform: translateX(0%);
+    }
+
+    .menu-div li {
+        display: block;
+        padding: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+        border-bottom: 1px solid #3BB3FF;
+    }
+
+    .checkbtn {
+        display: block;
+        margin: auto;
+    }
+
+    #check:checked~.menu-div {
+        transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+}
+
 /* Body Content */
 
 .main-container {
@@ -132,7 +234,7 @@ a {
     align-items: center;
     gap: 2rem;
     padding: 0 5rem;
-    font-size: 130%;
+    font-size: 20px;
 }
 
 .about-info img {
@@ -188,7 +290,7 @@ footer {
     padding: 0.6rem 0.8rem;
 }
 
-.location:hover i{
+.location:hover i {
     color: #0288FE;
     border-radius: 2rem;
     color: #ffffff;
@@ -200,12 +302,12 @@ footer {
     padding: 0.6rem 0.8rem;
 }
 
-.email:hover i{
+.email:hover i {
     color: #0288FE;
     border-radius: 2rem;
     color: #ffffff;
     transition: 0.6s;
-    background-image: linear-gradient(125deg, #e01a00, #ff2c10);    
+    background-image: linear-gradient(125deg, #e01a00, #ff2c10);
 }
 
 .social-icons {
@@ -287,33 +389,110 @@ footer>p span {
     color: #3bb3ff;
 }
 
-@media  screen and (max-width:700px) {
+/* Media Querie - Footer */
 
-    .about-info p{
+@media screen and (max-width: 1167px) {
+    .footer {
+        gap: 0rem;
+    }
 
-    }
-   
-    
-    
-    .about-info{
-    
-        display: flex;
-        flex-direction: column;
-        display: block;
-    }
-    .about-acm-div h2{
-        display: block;
-        justify-content: center;
-        text-align: center;
-    }
-    .footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    gap: 5rem;
-    padding: 3rem;
-    background-color: #0E0F23;
+    .main-container {
+        padding: 5rem 0;
     }
 }
 
+@media screen and (max-width: 950px) {
+    .contact img {
+        width: 14rem;
+    }
+
+    .contact div {
+        width: 16rem;
+    }
+
+    .contact {
+        width: 16rem;
+    }
+
+    .social-icons a {
+        padding: 0.6rem 0.6rem;
+    }
+}
+
+
+@media screen and (max-width: 769px) {
+    .about-info {
+        flex-direction: column;
+        padding: 0 3rem;
+    }
+
+    #about-info2 {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        height: 44rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact {
+        width: 30rem;
+    }
+
+    .contact div {
+        width: 29rem;
+        text-align: center;
+    }
+
+    .social-icon-div h3 {
+        padding: 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .about-acm-div h2 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    footer>p {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer>p span {
+        margin-left: 0.3rem;
+    }
+
+    .contact div {
+        width: 16rem;
+    }
+
+    .location i {
+        padding: 0;
+    }
+
+    .email i {
+        padding: 0;
+    }
+
+    .contact {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 501px) {
+
+    .about-info {
+        padding: 0;
+    }
+}
